@@ -10,17 +10,12 @@ public class trashSeller : MonoBehaviour, IInteractable
 
     public bool Interact(Interactor interactor)
     {
-        // stores the inventory script in a variable
         var inventory = interactor.GetComponent<Inventory>();
-
-        // if there is no inventory for some reason then the script stops
         if (inventory == null) return false;
 
-        // if there is something in the inventory then allow the player to sell
         if(inventory.inventorySpace != 0) {
             Debug.Log("Selling Trash for "+ inventory.inventorySpace + "$");
             
-            // adds the inventory space to the money and then resets the space to 0
             inventory.money += inventory.inventorySpace;
             _popUpText.text = "Sold: +" + inventory.inventorySpace +"$";
 

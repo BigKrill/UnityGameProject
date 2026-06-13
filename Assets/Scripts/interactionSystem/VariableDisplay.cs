@@ -10,7 +10,6 @@ public class VariableDisplay : MonoBehaviour
 
     public void inventoryUpdate(Inventory inventory)
     {
-        // displays the inventory variables on the screen
         _inventorySpace.text = inventory.inventorySpace.ToString();
         _inventorySize.text = inventory.inventorySize.ToString();
         _money.text = inventory.money.ToString()+ "$";

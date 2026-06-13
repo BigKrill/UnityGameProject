@@ -10,14 +10,12 @@ public class interactionPromptUI : MonoBehaviour
 
     private void Start()
     {
-        // sets the main camera and ui panel to false so it doesnt show up when theres nothing to look at
         _mainCam = Camera.main;
         _uiPanel.SetActive(false);
     }
 
     private void LateUpdate()
     {
-        // makes the ui panel look at the camera
         var rotation = _mainCam.transform.rotation;
         transform.LookAt(transform.position + rotation * Vector3.forward,
             rotation * Vector3.up);
@@ -27,7 +25,6 @@ public class interactionPromptUI : MonoBehaviour
 
     public void SetUp(string promptText)
     {
-        // sets the ui panels prompt text to whatever is specified on the object being interacted with and sisplays it
         _promptText.text = promptText;
         if (promptText != ""){
             _uiPanel.SetActive(true);
@@ -35,7 +32,6 @@ public class interactionPromptUI : MonoBehaviour
         }
     }
 
-    // turns the panel off
     public void Close()
     {
         _uiPanel.SetActive(false);
